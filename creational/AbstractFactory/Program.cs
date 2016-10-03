@@ -32,7 +32,7 @@ namespace ConsoleApplication
     {
         public void paint()
         {
-            Console.WriteLine("Painting windows button ...");
+            Console.WriteLine("Painting windows table ...");
         }
     }
 
@@ -40,7 +40,7 @@ namespace ConsoleApplication
     {
         public void paint()
         {
-            Console.WriteLine("Painting linux button...");
+            Console.WriteLine("Painting linux table...");
         }
     }
 
@@ -73,7 +73,7 @@ namespace ConsoleApplication
 
         public ITable createTable()
         {
-            return new WindowsTable();
+            return new LinuxTable();
         }
     }
 
