@@ -28,10 +28,10 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             Singleton st = Singleton.getInstance();
-            Console.WriteLine( st.counterInc() );
+            Console.WriteLine( st.counterInc() ); // 1
 
             Singleton st2 = Singleton.getInstance();
-            Console.WriteLine( st2.counterInc() );
+            Console.WriteLine( st2.counterInc() ); // 2
         }
     }
 }
