@@ -1,0 +1,3 @@
+The code and the diagram is such as the code and the diagram of the State pattern.
+But in this case we perform the algorithm on some data. (algortm of counting the discount).
+which can vary depending on the weekday. (for example).
