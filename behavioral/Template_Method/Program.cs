@@ -4,43 +4,60 @@ namespace ConsoleApplication
 {
     abstract class Day
     {
-        public void startDay(int a)
+        public abstract void startDay(int a);
+
+        public abstract void dayEvent();
+
+        // tempalte method
+        public void day( int number )
         {
-            Console.WriteLine( String.Format("Wake up! (Day {0})", a) );
+            Console.WriteLine( String.Format("Day {0}. Wake up!", number));
+            this.startDay(number);
+            this.dayEvent();
+            this.finishDay(number);
+            Console.WriteLine( String.Format("Day {0} has been finished. Go to bed", number) );
         }
 
-        public abstract void day();
-
-        public void finishDay(int a)
-        {
-            Console.WriteLine( String.Format("Go to bed! (Day {0} )", a) );
-        }
+        public abstract void finishDay(int a);
 
     }
 
 
     class Day1 : Day
     {
-        public override void day()
+        public override void startDay(int a) 
         {
-            this.startDay(1);
+            Console.WriteLine( String.Format("reading the book") );
+        }
 
-            Console.WriteLine("go to the cinema!");
+        public override void dayEvent()
+        {
+            Console.WriteLine("Go to the cinema");
+        }
 
-            this.finishDay(1);
+        public override void finishDay(int a) 
+        {
+            Console.WriteLine("plaing CS GO");
         }
     }
 
 
     class Day2 : Day
     {
-        public override void day()
+        public override void startDay(int a) 
         {
-            this.startDay(2);
+            Console.WriteLine("talking with my friend");
+        }
 
-            Console.WriteLine("go to the shop!");
+        public override void dayEvent()
+        {
+            Console.WriteLine("Go to the shop!");
+        }
+
+        public override void finishDay(int a) 
+        {
+            Console.WriteLine("plaing fifa 17");
             
-            this.finishDay(2);
         }
     }
 
@@ -49,10 +66,10 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             Day d1 = new Day1();
-            d1.day();
+            d1.day( 1 );
 
             Day d2 = new Day2();
-            d2.day();
+            d2.day( 2 );
         }
     }
 }
