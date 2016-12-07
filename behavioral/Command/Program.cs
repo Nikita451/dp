@@ -92,10 +92,10 @@ namespace ConsoleApplication
             command.Do();
             if (this.currentCommand < this.commands.Count ) {
                 this.commands.RemoveRange( this.currentCommand, this.commands.Count - this.currentCommand );
-            } else {
-                this.commands.Add( command );
-                this.currentCommand++;
             }
+            this.commands.Add( command );
+            this.currentCommand++;
+            
         }
 
         public void unDo(int countComs) 
